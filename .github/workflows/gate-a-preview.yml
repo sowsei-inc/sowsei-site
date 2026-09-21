@@ -1,8 +1,8 @@
-name: Gate A Preview
+name: Gate B Preview
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches: [prototype/gate-b]
   workflow_dispatch:
 
 permissions:
@@ -25,15 +25,15 @@ jobs:
       - name: Upload preview artifact
         uses: actions/upload-artifact@v4
         with:
-          name: sowsei-site-gate-a
+          name: sowsei-site-gate-b
           path: dist/
           retention-days: 7
-      - name: Deploy isolated Gate A preview
+      - name: Deploy isolated Gate B preview
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.XSERVER_FTP_HOST }}
           username: ${{ secrets.XSERVER_FTP_USER }}
           password: ${{ secrets.XSERVER_FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./a/
+          server-dir: ./b/
           dangerous-clean-slate: false

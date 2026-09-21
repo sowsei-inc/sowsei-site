@@ -22,13 +22,17 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-      - name: Package touchable preview
-        run: |
-          cd dist
-          zip -r ../sowsei-site-gate-a.zip .
-      - name: Upload preview
+      - name: Upload preview artifact
         uses: actions/upload-artifact@v4
         with:
           name: sowsei-site-gate-a
-          path: sowsei-site-gate-a.zip
+          path: dist/
           retention-days: 7
+      - name: Deploy isolated Gate A preview
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.XSERVER_FTP_HOST }}
+          username: ${{ secrets.XSERVER_FTP_USER }}
+          password: ${{ secrets.XSERVER_FTP_PASSWORD }}
+          local-dir: ./dist/
+          dangerous-clean-slate: false

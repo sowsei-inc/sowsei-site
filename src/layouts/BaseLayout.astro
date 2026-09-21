@@ -1,0 +1,63 @@
+---
+const { title = '株式会社創正', description = '株式会社創正の公式サイト' } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [
+  ['Products', '/products/'],
+  ['Sousei-line', '/sousei-line/'],
+  ['About', '/about/'],
+  ['Contact', '/contact/'],
+];
+---
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <style is:global>
+    :root { font-family: Inter, "Noto Sans JP", system-ui, sans-serif; color:#111; background:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; line-height:1.75; }
+    a { color:inherit; text-decoration:none; }
+    header, main, footer { width:min(1120px, calc(100% - 40px)); margin-inline:auto; }
+    header { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #e8e8e8; }
+    .brand { font-weight:700; letter-spacing:.08em; white-space:nowrap; }
+    nav { display:flex; gap:20px; font-size:.88rem; }
+    nav a[aria-current="page"] { border-bottom:1px solid; }
+    main { min-height:72vh; }
+    .hero { padding:14vh 0 12vh; max-width:850px; }
+    .eyebrow { font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:#666; }
+    h1 { font-size:clamp(2.7rem, 9vw, 6.8rem); line-height:.95; letter-spacing:-.055em; margin:.22em 0 .35em; }
+    h2 { font-size:clamp(1.65rem, 4vw, 2.7rem); line-height:1.2; margin:0 0 20px; }
+    p { max-width:680px; }
+    .lead { font-size:clamp(1.05rem, 2.3vw, 1.3rem); color:#333; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid #ddd; margin-bottom:12vh; }
+    .entry { padding:36px 0; border-bottom:1px solid #ddd; }
+    .entry:nth-child(odd) { padding-right:32px; }
+    .entry:nth-child(even) { padding-left:32px; border-left:1px solid #ddd; }
+    .entry span { display:block; color:#666; font-size:.9rem; margin-top:12px; }
+    .page { padding:10vh 0 14vh; }
+    .page h1 { font-size:clamp(2.5rem,7vw,5.5rem); }
+    .note { margin-top:48px; padding-top:24px; border-top:1px solid #ddd; color:#666; font-size:.9rem; }
+    footer { border-top:1px solid #ddd; padding:28px 0 42px; font-size:.8rem; color:#666; }
+    @media (max-width:700px) {
+      header { min-height:68px; align-items:flex-start; padding:20px 0 16px; flex-direction:column; gap:14px; }
+      nav { width:100%; overflow-x:auto; gap:18px; padding-bottom:2px; }
+      .hero { padding:11vh 0 9vh; }
+      .grid { grid-template-columns:1fr; }
+      .entry,.entry:nth-child(odd),.entry:nth-child(even) { padding:28px 0; border-left:0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">株式会社創正</a>
+    <nav aria-label="Main navigation">
+      {nav.map(([label, href]) => <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>)}
+    </nav>
+  </header>
+  <main><slot /></main>
+  <footer>© Sowsei Inc.</footer>
+</body>
+</html>

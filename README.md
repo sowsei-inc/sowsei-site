@@ -2,4 +2,13 @@
 
 Official website source for Sowsei Inc.
 
-Status: initial prototype in progress. Production publication is not yet adopted.
+## Status
+
+Gate A prototype in progress. Production publication is not yet adopted.
+
+## Stack
+
+- Astro
+- microCMS (content scope to be defined after Gate A)
+- GitHub
+- Xserver

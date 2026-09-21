@@ -1,6 +1,8 @@
 name: Gate C Preview
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [prototype/gate-c]
   workflow_dispatch:

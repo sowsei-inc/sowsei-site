@@ -1,8 +1,8 @@
 name: Gate A Preview
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches: [prototype/gate-a]
   workflow_dispatch:
 
 permissions:

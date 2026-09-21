@@ -35,4 +35,5 @@ jobs:
           username: ${{ secrets.XSERVER_FTP_USER }}
           password: ${{ secrets.XSERVER_FTP_PASSWORD }}
           local-dir: ./dist/
+          server-dir: ./a/
           dangerous-clean-slate: false

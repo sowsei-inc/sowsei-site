@@ -24,12 +24,6 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-      - name: Upload preview artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: sowsei-site-gate-b
-          path: dist/
-          retention-days: 7
       - name: Deploy isolated Gate B preview
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:

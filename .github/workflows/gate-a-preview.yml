@@ -1,10 +1,10 @@
-name: Gate B Preview
+name: Gate D Preview
 
 on:
   pull_request:
     branches: [main]
   push:
-    branches: [prototype/gate-b]
+    branches: [prototype/gate-d]
   workflow_dispatch:
 
 permissions:
@@ -24,12 +24,12 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-      - name: Deploy isolated Gate B preview
+      - name: Deploy isolated Gate D Preview
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.XSERVER_FTP_HOST }}
           username: ${{ secrets.XSERVER_FTP_USER }}
           password: ${{ secrets.XSERVER_FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./b/
+          server-dir: ./d/
           dangerous-clean-slate: false

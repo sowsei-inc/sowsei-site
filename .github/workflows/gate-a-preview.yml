@@ -1,8 +1,8 @@
-name: Corporate Light Preview
+name: Corporate Mid Preview
 on:
   push:
     branches:
-      - prototype/corporate-light
+      - prototype/corporate-mid
   workflow_dispatch:
 permissions:
   contents: read
@@ -22,5 +22,5 @@ jobs:
           username: ${{ secrets.XSERVER_FTP_USER }}
           password: ${{ secrets.XSERVER_FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./cl/
+          server-dir: ./cm/
           dangerous-clean-slate: false

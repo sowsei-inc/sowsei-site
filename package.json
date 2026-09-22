@@ -1,14 +1,1 @@
-{
-  "name": "sowsei-site",
-  "type": "module",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
-  },
-  "dependencies": {
-    "astro": "^5.0.0"
-  }
-}
+{"name":"sowsei-site-react-experiment","version":"0.1.0","private":true,"scripts":{"dev":"vite","build":"vite build","preview":"vite preview"},"dependencies":{"@vitejs/plugin-react":"latest","vite":"latest","typescript":"latest","react":"latest","react-dom":"latest","framer-motion":"latest"},"devDependencies":{}}

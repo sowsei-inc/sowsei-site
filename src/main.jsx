@@ -2,8 +2,8 @@ import React from 'react';
 import {createRoot} from 'react-dom/client';
 import './style.css';
 
-const Product=({name,desc,kind,href,external=false}) => (
-  <a className={"product "+kind} href={href} {...(external ? {target:"_blank",rel:"noreferrer"} : {})}>
+const Product=({name,desc,kind,href}) => (
+  <a className={"product "+kind} href={href}>
     <strong>{name}</strong><span>{desc}</span><b>→</b>
   </a>
 );
@@ -19,8 +19,8 @@ function App(){
       <section className="products" id="products">
         <div className="section-head"><small>事業・製品</small><h2>いま、やっていること。</h2></div>
         <div className="product-list">
-          <Product name="Iro" desc="アプリ" kind="yellow" href="https://github.com/sousei-yamashita/iro" external/>
-          <Product name="Sousei-line" desc="ソフトウェアの製造・検品工程" kind="blue" href="https://github.com/sowsei-inc/sousei-line" external/>
+          <Product name="Iro" desc="アプリ" kind="yellow" href="#contact"/>
+          <Product name="Sousei-line" desc="ソフトウェアの製造・検品工程" kind="blue" href="#contact"/>
           <Product name="電子機器" desc="修理・製作など" kind="pink" href="#contact"/>
         </div>
       </section>

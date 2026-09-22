@@ -1,8 +1,8 @@
-name: Zero Visual Preview
+name: Zero Play Preview
 on:
   push:
     branches:
-      - prototype/zero-visual
+      - prototype/zero-play
   workflow_dispatch:
 permissions:
   contents: read
@@ -22,5 +22,5 @@ jobs:
           username: ${{ secrets.XSERVER_FTP_USER }}
           password: ${{ secrets.XSERVER_FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./z/
+          server-dir: ./zp/
           dangerous-clean-slate: false

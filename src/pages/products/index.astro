@@ -1,4 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<BaseLayout title="制作物｜株式会社創正"><section class="page-head"><span>制作物</span><h1>創正から外へ出すもの。</h1><p>製品や公開している仕組みを、ここから辿れます。</p></section><section class="page-list"><div class="page-row"><span>製品</span><div><strong>Iro</strong><p>日常の中で使う小さなソフトウェア。現在、次の版を準備しています。</p></div></div><a class="page-row" href="../sousei-line/"><span>仕組み</span><div><strong>Sousei-line</strong><p>ソフトウェアの製造・検品の仕組み。</p></div><b>→</b></a></section></BaseLayout>
+<BaseLayout title="制作物｜株式会社創正"><section class="page-head"><span class="page-label">PRODUCTS</span><div><h1>創正から外へ出すもの。</h1><p>製品や公開している仕組みを、ここから辿れます。</p></div></section><section class="works"><div class="work"><span class="label">PRODUCT / SOFTWARE</span><h2>Iro</h2><p>日常の中で使う小さなソフトウェア。現在、次の版を準備しています。</p><div class="iro-art" aria-hidden="true"></div></div><a class="work" href={base+'/sousei-line/'}><span class="label">SYSTEM / MANUFACTURING</span><h2>Sousei-line</h2><p>ソフトウェアの製造・検品の仕組み。</p><div class="line-art" aria-hidden="true"><svg viewBox="0 0 500 100"><path d="M5 58 C80 58 82 22 155 22 S225 76 300 76 S375 35 495 35"/><circle cx="74" cy="55" r="7"/><circle cx="157" cy="22" r="7"/><circle class="solid" cx="300" cy="76" r="7"/><circle cx="425" cy="38" r="7"/></svg></div></a></section></BaseLayout>

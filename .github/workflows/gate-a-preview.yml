@@ -1,8 +1,8 @@
-name: Zero Quiet Preview
+name: Corporate Pop Preview
 on:
   push:
     branches:
-      - prototype/zero-quiet
+      - prototype/corporate-pop
   workflow_dispatch:
 permissions:
   contents: read
@@ -22,5 +22,5 @@ jobs:
           username: ${{ secrets.XSERVER_FTP_USER }}
           password: ${{ secrets.XSERVER_FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./zq/
+          server-dir: ./cp/
           dangerous-clean-slate: false

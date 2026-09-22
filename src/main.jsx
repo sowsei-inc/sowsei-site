@@ -13,7 +13,7 @@ function App(){
     <header><a href="#top">株式会社創正</a><nav><a href="#products">事業・製品</a><a href="#about">会社</a><a href="#contact">連絡</a></nav></header>
     <main id="top">
       <section className="hero">
-        <div><small>株式会社創正</small><h1>つくる。<br/>なおす。<br/>考える。</h1><p>株式会社創正は、ソフトウェアや電子機器など、対象に合わせてものを作り、直し、仕事をしています。</p></div>
+        <div><small>株式会社創正</small><h1>つくる。<br/>なおす。<br/>考える。</h1><p>株式会社創正は、対象に合わせてものを作り、考え、仕事をしています。</p></div>
         <aside><strong>創正</strong><span>2026</span></aside>
       </section>
       <section className="products" id="products">

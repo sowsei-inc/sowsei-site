@@ -24,8 +24,8 @@ function App(){
           <Product name="電子機器" desc="修理・製作など" kind="pink"/>
         </div>
       </section>
-      <section className="about" id="about"><small>会社について</small><h2>株式会社創正</h2><p>会社情報は公開内容の確定後に掲載します。</p></section>
-      <section className="contact" id="contact"><small>お問い合わせ</small><h2>仕事や製品について、<br/>ご連絡ください。</h2><a href="#">連絡する →</a></section>
+      <section className="about" id="about"><small>会社について</small><h2>株式会社創正</h2><p>代表取締役　山下 正人<br/>所在地　神奈川県秦野市</p></section>
+      <section className="contact" id="contact"><small>お問い合わせ</small><h2>仕事や製品について、<br/>ご連絡ください。</h2><a href="mailto:info@sowsei.jp">info@sowsei.jp →</a></section>
     </main>
     <footer><b>株式会社創正</b><span>© 2026</span></footer>
   </div>

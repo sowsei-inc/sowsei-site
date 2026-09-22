@@ -46,6 +46,6 @@ jobs:
             set ssl:verify-certificate true;
             open $FTP_HOST;
             user $FTP_USER $FTP_PASSWORD;
-            mirror --reverse --delete --verbose dist/ /sowsei.jp/public_html/;
+            mirror --reverse --delete --verbose dist/ /;
             bye
           "

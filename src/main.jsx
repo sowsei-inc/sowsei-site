@@ -21,7 +21,6 @@ function App(){
         <div className="product-list">
           <Product name="Iro" desc="ことばで選んで、ちょうどいい色へ。" kind="yellow" href="#contact"/>
           <Product name="Sousei-line" desc="ソフトウェアの製造・検品工程" kind="blue" href="#contact"/>
-          <Product name="電子機器" desc="修理・製作など" kind="pink" href="#contact"/>
         </div>
       </section>
       <section className="about" id="about"><small>会社について</small><h2>株式会社創正</h2><p>代表取締役　山下 正人<br/>所在地　神奈川県秦野市</p></section>

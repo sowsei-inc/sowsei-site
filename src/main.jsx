@@ -13,13 +13,13 @@ function App(){
     <header><a href="#top">株式会社創正</a><nav><a href="#products">事業・製品</a><a href="#about">会社</a><a href="#contact">連絡</a></nav></header>
     <main id="top">
       <section className="hero">
-        <div><small>株式会社創正</small><h1>つくる。<br/>なおす。<br/>考える。</h1><p>ソフトウェアや電子機器など、対象に合わせて仕事をしています。</p></div>
+        <div><small>株式会社創正</small><h1>つくる。<br/>なおす。<br/>考える。</h1><p>株式会社創正は、ソフトウェアや電子機器など、対象に合わせてものを作り、直し、仕事をしています。</p></div>
         <aside><strong>創正</strong><span>2026</span></aside>
       </section>
       <section className="products" id="products">
         <div className="section-head"><small>事業・製品</small><h2>いま、やっていること。</h2></div>
         <div className="product-list">
-          <Product name="Iro" desc="アプリ" kind="yellow" href="#contact"/>
+          <Product name="Iro" desc="ことばで選んで、ちょうどいい色へ。" kind="yellow" href="#contact"/>
           <Product name="Sousei-line" desc="ソフトウェアの製造・検品工程" kind="blue" href="#contact"/>
           <Product name="電子機器" desc="修理・製作など" kind="pink" href="#contact"/>
         </div>

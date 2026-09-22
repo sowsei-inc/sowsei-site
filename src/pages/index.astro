@@ -4,9 +4,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <BaseLayout>
 <section class="intro"><p>ソフトウェア、電子機器、仕組みなどを作っています。</p></section>
-<section class="destinations">
-  <a class="destination" href={base+'/products/'}><span class="kind">製品</span><div><h2>Iro</h2><p>日常の中で使う小さなソフトウェア。</p></div><span class="go">詳しく見る →</span></a>
-  <a class="destination" href={base+'/sousei-line/'}><span class="kind">仕組み</span><div><h2>Sousei-line</h2><p>創正のソフトウェア製造・検品の仕組み。</p></div><span class="go">仕組みを見る →</span></a>
-</section>
-<nav class="secondary"><a href={base+'/about/'}>創正について</a><a href={base+'/contact/'}>お問い合わせ</a></nav>
+<section class="feature"><div class="mock" aria-label="Iro画面イメージ"><div class="phone"><i></i><div class="swatches"><b></b><b></b><b></b></div></div></div><div class="feature-copy"><span class="kind">製品</span><h1>Iro</h1><p>日常の中で使う小さなソフトウェア。</p><a class="text-link" href={base+'/products/'}>製品を見る →</a></div></section>
+<section class="process"><div class="process-head"><strong>Sousei-line</strong><span>ソフトウェア製造・検品</span></div><div class="steps"><div class="step"><b>01</b><span>企画</span></div><div class="step"><b>02</b><span>製造</span></div><div class="step"><b>03</b><span>検品</span></div><div class="step"><b>04</b><span>人間判断</span></div><div class="step"><b>05</b><span>公開</span></div></div></section>
+<section class="company-strip"><p>株式会社創正は神奈川にある小さな会社です。作ったものを外へ出し、その反応から次を作ります。</p><nav class="secondary"><a href={base+'/about/'}>創正について</a><a href={base+'/contact/'}>お問い合わせ</a></nav></section>
 </BaseLayout>

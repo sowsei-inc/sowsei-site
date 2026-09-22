@@ -1,35 +1,26 @@
-name: Gate D Preview
-
+name: Gate H Preview
 on:
-  pull_request:
-    branches: [main]
   push:
-    branches: [prototype/gate-d]
+    branches: [prototype/gate-h]
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Install
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Deploy isolated Gate D Preview
+      - run: npm install
+      - run: npm run build
+      - name: Deploy isolated Gate H Preview
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.XSERVER_FTP_HOST }}
           username: ${{ secrets.XSERVER_FTP_USER }}
           password: ${{ secrets.XSERVER_FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./d/
+          server-dir: ./h/
           dangerous-clean-slate: false

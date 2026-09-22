@@ -1,4 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<BaseLayout title="制作物｜株式会社創正"><section class="page-head"><span>制作物</span><h1>創正から外へ出すもの。</h1><p>製品や公開している仕組みを、ここから辿れます。</p></section><section class="page-list"><div class="page-row"><span>製品</span><div><strong>Iro</strong><p>日常の中で使う小さなソフトウェア。現在、次の版を準備しています。</p></div></div><a class="page-row" href="../sousei-line/"><span>仕組み</span><div><strong>Sousei-line</strong><p>ソフトウェアの製造・検品の仕組み。</p></div><b>→</b></a></section></BaseLayout>
+<BaseLayout title="制作物｜株式会社創正"><section class="page-head"><span>制作物</span><h1>創正から外へ出すもの。</h1><p>製品や公開している仕組みを、ここから辿れます。</p></section><section class="feature"><div class="mock" aria-label="Iro画面イメージ"><div class="phone"><i></i><div class="swatches"><b></b><b></b><b></b></div></div></div><div class="feature-copy"><span class="kind">製品</span><h1>Iro</h1><p>日常の中で使う小さなソフトウェア。現在、次の版を準備しています。</p></div></section><section class="page-list"><a class="page-row" href={base+'/sousei-line/'}><span>仕組み</span><div><strong>Sousei-line</strong><p>ソフトウェアの製造・検品の仕組み。</p></div><b>→</b></a></section></BaseLayout>

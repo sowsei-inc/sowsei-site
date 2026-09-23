@@ -15,6 +15,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     env:
       MICROCMS_SERVICE_DOMAIN: ${{ vars.MICROCMS_SERVICE_DOMAIN }}
       MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
@@ -45,9 +46,10 @@ jobs:
           lftp -e "
             set ftp:ssl-force true;
             set ssl:verify-certificate true;
+            set net:timeout 10;
+            set net:max-retries 2;
             open $FTP_HOST;
             user $FTP_USER $FTP_PASSWORD;
-            mkdir -p /preview/company-first-20260923;
-            mirror --reverse --delete --verbose dist/ /preview/company-first-20260923/;
+            mirror --reverse --delete --verbose --create-dirs dist/ /preview/company-first-20260923/;
             bye
           "

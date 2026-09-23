@@ -51,6 +51,6 @@ jobs:
             open $FTP_HOST;
             user $FTP_USER $FTP_PASSWORD;
             mkdir -p /preview/company-first-20260923;
-            mirror --reverse --delete --verbose dist/ /preview/company-first-20260923/;
+            mirror --reverse --delete --verbose dist/ /company-first-20260923/;
             bye
           "

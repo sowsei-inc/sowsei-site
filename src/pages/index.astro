@@ -9,7 +9,7 @@ const made = [
 const serviceDomain = import.meta.env.MICROCMS_SERVICE_DOMAIN;
 const apiKey = import.meta.env.MICROCMS_API_KEY;
 let heroTitle = 'つくる。なおす。考える。';
-let heroDescription = '株式会社創正は、対象に合わせてものを作り、考え、仕事をしています。';
+let heroDescription = '株式会社創正は、ものを作り、直し、考える会社です。';
 if (serviceDomain && apiKey) {
   const response = await fetch(`https://${serviceDomain}.microcms.io/api/v1/site`, { headers: { 'X-MICROCMS-API-KEY': apiKey } });
   if (!response.ok) throw new Error(`microCMS request failed: ${response.status} ${response.statusText}`);
@@ -24,14 +24,14 @@ if (serviceDomain && apiKey) {
 <body>
 <header><a href="#top">株式会社創正</a><nav><a href="#about">創正</a><a href="#contact">連絡</a></nav></header>
 <main id="top">
-<section class="hero"><div><small>株式会社創正</small><h1>{heroTitle}</h1><p>{heroDescription}</p></div><aside><strong>創正</strong><span>SOwSEI INC. / 2026</span></aside></section>
+<section class="hero"><div><small>株式会社創正</small><h1>{heroTitle}</h1><p>{heroDescription}</p></div><aside><strong>創正</strong><span>2026</span></aside></section>
 <section class="about" id="about">
   <small>創正について</small>
-  <h2>何をするかより、<br/>どう仕事をするか。</h2>
-  <p class="lead">対象を見て、必要なものを作る。壊れていれば直す。分からなければ考える。<br/>創正は、ひとつの領域だけを会社そのものとして掲げるのではなく、実物と仕事を積み重ねていきます。</p>
+  <h2>創正の仕事。</h2>
+  <p class="lead">ものを作る。壊れていれば直す。分からなければ考える。<br/>必要なことを、対象に合わせてやります。</p>
   <dl><div><dt>法人名</dt><dd>株式会社創正</dd></div><div><dt>代表</dt><dd>代表取締役　山下 正人</dd></div><div><dt>所在地</dt><dd>神奈川県秦野市</dd></div><div><dt>設立</dt><dd>2026年</dd></div></dl>
   <div class="made"><span>つくったもの</span><p>{made.map((item, i) => <><a href={item.href}>{item.name}</a>{i < made.length - 1 && <span aria-hidden="true"> / </span>}</>)}</p></div>
 </section>
 <section class="contact" id="contact"><small>お問い合わせ</small><h2>仕事や製品について、<br/>ご連絡ください。</h2><a href="mailto:info@sowsei.jp">info@sowsei.jp →</a></section>
-</main><footer><b>株式会社創正</b><span>© 2026 SOwSEI INC.</span></footer>
+</main><footer><b>株式会社創正</b><span>© 2026</span></footer>
 </body></html>

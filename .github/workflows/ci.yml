@@ -16,6 +16,18 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run build
+      - name: Write preview identity
+        if: github.event_name == 'pull_request' && github.event.pull_request.number == 10
+        run: |
+          printf '%s\n' 'sousei.preview/v1' 'repository=sowsei-inc/sowsei-site' 'pr=10' "head_sha=${GITHUB_SHA}" > dist/PREVIEW_IDENTITY.txt
+      - name: Upload exact preview artifact
+        if: github.event_name == 'pull_request' && github.event.pull_request.number == 10
+        uses: actions/upload-artifact@v4
+        with:
+          name: company-site-preview-pr10-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30
       - name: Install lftp for preview
         if: github.event_name == 'pull_request' && github.head_ref == 'preview/company-first-20260923'
         run: sudo apt-get update && sudo apt-get install -y lftp

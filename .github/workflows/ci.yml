@@ -16,3 +16,22 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run build
+      - name: Install lftp for preview
+        if: github.event_name == 'pull_request' && github.head_ref == 'preview/company-first-20260923'
+        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Deploy isolated public preview
+        if: github.event_name == 'pull_request' && github.head_ref == 'preview/company-first-20260923'
+        env:
+          FTP_HOST: ${{ secrets.XSERVER_FTP_HOST }}
+          FTP_USER: ${{ secrets.XSERVER_FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.XSERVER_FTP_PASSWORD }}
+        run: |
+          lftp -e "
+            set ftp:ssl-force true;
+            set ssl:verify-certificate true;
+            open $FTP_HOST;
+            user $FTP_USER $FTP_PASSWORD;
+            mkdir -p /preview/company-first-20260923;
+            mirror --reverse --delete --verbose dist/ /preview/company-first-20260923/;
+            bye
+          "

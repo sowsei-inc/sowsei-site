@@ -18,13 +18,15 @@ jobs:
       - run: npm run build
       - name: Write preview identity
         if: github.event_name == 'pull_request' && github.event.pull_request.number == 10
+        env:
+          PREVIEW_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
-          printf '%s\n' 'sousei.preview/v1' 'repository=sowsei-inc/sowsei-site' 'pr=10' "head_sha=${GITHUB_SHA}" > dist/PREVIEW_IDENTITY.txt
+          printf '%s\n' 'sousei.preview/v1' 'repository=sowsei-inc/sowsei-site' 'pr=10' "head_sha=${PREVIEW_HEAD_SHA}" > dist/PREVIEW_IDENTITY.txt
       - name: Upload exact preview artifact
         if: github.event_name == 'pull_request' && github.event.pull_request.number == 10
         uses: actions/upload-artifact@v4
         with:
-          name: company-site-preview-pr10-${{ github.sha }}
+          name: company-site-preview-pr10-${{ github.event.pull_request.head.sha }}
           path: dist/
           if-no-files-found: error
           retention-days: 30

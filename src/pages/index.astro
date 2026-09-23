@@ -26,7 +26,7 @@ if (serviceDomain && apiKey) {
 <main id="top">
 <section class="hero"><div><small>株式会社創正</small><h1>{heroTitle}</h1><p>{heroDescription}</p></div><aside><strong>創正</strong><span>SOwSEI INC. / 2026</span></aside></section>
 <section class="about" id="about"><small>創正について</small><h2>何をするかより、<br/>どう仕事をするか。</h2><p class="lead">対象を見て、必要なものを作る。壊れていれば直す。分からなければ考える。<br/>創正は、ひとつの領域だけを会社そのものとして掲げるのではなく、実物と仕事を積み重ねていきます。</p><dl><div><dt>法人名</dt><dd>株式会社創正</dd></div><div><dt>代表</dt><dd>代表取締役　山下 正人</dd></div><div><dt>所在地</dt><dd>神奈川県秦野市</dd></div><div><dt>設立</dt><dd>2026年</dd></div></dl></section>
-<section class="outputs" id="outputs"><div class="section-head"><small>FROM SOUSEI</small><h2>創正から出てきたもの。</h2><p>製品や製造設備など、公開できる実物をここに置いています。これらは創正の活動の一部で、会社そのものの事業一覧ではありません。</p></div><div class="output-list">{outputs.map((p) => <a class="output" href={p.href}><span class="type">{p.type}</span><strong>{p.name}</strong><span class="desc">{p.desc}</span><b>→</b></a>)}</div></section>
+<section class="outputs" id="outputs"><div class="outputs-inner"><div class="section-head"><small>FROM SOUSEI</small><h2>創正から出てきたもの。</h2></div><div class="output-list">{outputs.map((p) => <a class="output" href={p.href}><span class="type">{p.type}</span><strong>{p.name}</strong><span class="desc">{p.desc}</span><b>→</b></a>)}</div></div></section>
 <section class="contact" id="contact"><small>お問い合わせ</small><h2>仕事や製品について、<br/>ご連絡ください。</h2><a href="mailto:info@sowsei.jp">info@sowsei.jp →</a></section>
 </main><footer><b>株式会社創正</b><span>© 2026 SOwSEI INC.</span></footer>
 </body></html>

@@ -50,6 +50,7 @@ jobs:
             set net:max-retries 2;
             open $FTP_HOST;
             user $FTP_USER $FTP_PASSWORD;
-            mirror --reverse --delete --verbose --create-dirs dist/ /preview/company-first-20260923/;
+            mkdir -p /preview/company-first-20260923;
+            mirror --reverse --delete --verbose dist/ /preview/company-first-20260923/;
             bye
           "
